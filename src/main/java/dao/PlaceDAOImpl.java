@@ -1,18 +1,13 @@
 package dao;
 
 import model.Place;
-import model.User;
-import org.hibernate.SessionFactory;
-import org.hibernate.cfg.Configuration;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import javax.inject.Inject;
 import javax.persistence.EntityManager;
 
 @Repository //("placeDAO")
 public class PlaceDAOImpl implements PlaceDAO {
-
     @Autowired
     private EntityManager em;
 
