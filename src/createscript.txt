@@ -1,0 +1,26 @@
+create database db_test;
+use db_test;
+ 
+CREATE TABLE `users` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(45) NOT NULL,
+  `age` double NOT NULL,
+  PRIMARY KEY (`id`)
+);
+
+CREATE TABLE `locations` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `latitude` varchar(128) NOT NULL,
+  `longitude` varchar(512) NOT NULL,
+  PRIMARY KEY (`id`)
+);
+
+CREATE TABLE `places` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(128) NOT NULL,
+  `description` varchar(512) NOT NULL,
+  `location_id` int(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `location_fk` (`location_id`),
+  CONSTRAINT `location_fk` FOREIGN KEY (`location_id`) REFERENCES `locations` (`id`)
+);
