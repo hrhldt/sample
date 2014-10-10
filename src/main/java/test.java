@@ -16,7 +16,6 @@ public class test {
     @Test
     public void givenEntityIsPersisted_thenException() throws IOException {
         SessionFactory sessionFactory = configureSessionFactory();
-
         Session session = sessionFactory.openSession();
         session.beginTransaction();
         session.saveOrUpdate(new User());
